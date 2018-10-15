@@ -2,10 +2,12 @@
   <div class="cw-banner bg-green">
     <div class="text text-white">
       <span class="title">
-        <h1>Be Productive on your Classroom</h1>
+        <h1>Be productive on your class.</h1>
       </span>
-      <span class="description text-yellow">
-        <h4>CLASSWORX is an online management platform that improves the connectivity between students and teachers and it's easy to use.</h4>
+      <span class="description">
+        <h4>
+          Best way of communication between students and teachers. Transforming class works to digital and making it more easy to the users. Check attendances in just a touch of a finger. 
+        </h4>
       </span>
     </div>
     <div class="image">
@@ -40,7 +42,7 @@ export default {
   width: 40%;
   float: left;
   margin-left: 10%;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 .text .title{
   width: 100%;
@@ -59,7 +61,7 @@ export default {
   width: 40%;
   margin-right: 10%;
   float: left;
-  margin-top: 50px;
+  margin-top: 150px;
   display: block;
 }
 

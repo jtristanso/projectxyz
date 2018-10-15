@@ -5,7 +5,7 @@
     </div>
     <div class="text text-white">
       <span class="title text-primary">
-        <h1>Handle your Organization Easily!</h1>
+        <h1>Handle your organization easily.</h1>
       </span>
       <span class="description text-gray">
         <h4>Social Network allows you to share your knowledge and answer a problem to specific course from your school mates and other schools.</h4>

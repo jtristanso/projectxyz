@@ -5,10 +5,12 @@
     </div>
     <div class="text text-white">
       <span class="title text-primary">
-        <h1>Be an Expert on sharing your Ideas</h1>
+        <h1>Be an expert on sharing your learnings.</h1>
       </span>
       <span class="description text-gray">
-        <h4>Social Network allows you to share your knowledge and answer a problem to specific course from your school mates and other schools.</h4>
+        <h4>
+          Connecting students and teachers from different schools. Allows to share your knowledge and answer a problem to specific course from your school mates and other schools. 
+        </h4>
       </span>
     </div>
   </div>
@@ -41,7 +43,7 @@ export default {
   width: 40%;
   float: left;
   margin-right: 10%;
-  margin-top: 100px;
+  margin-top: 200px;
 }
 
 .text .title{
@@ -64,7 +66,7 @@ export default {
   width: 40%;
   margin-left: 10%;
   float: left;
-  margin-top: 50px;
+  margin-top: 150px;
   display: block;
 }
 
