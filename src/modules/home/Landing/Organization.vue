@@ -8,7 +8,9 @@
         <h1>Handle your organization easily.</h1>
       </span>
       <span class="description text-gray">
-        <h4>Social Network allows you to share your knowledge and answer a problem to specific course from your school mates and other schools.</h4>
+        <h4>
+            Disseminate information of events specifically to the target attendees.
+        </h4>
       </span>
     </div>
   </div>
