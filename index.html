@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html style="height:100%">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>ClassWorx</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" 
+    integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.7/semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(window).scroll(function() {
+          if ($(this).scrollTop() >= 50) {
+            $('#return-to-top').fadeIn(200)
+          }else{
+            $('#return-to-top').fadeOut(200)
+          }
+        });
+        $('#return-to-top').click(function() {
+          $('body,html').animate({
+            scrollTop : 0
+          }, 500)
+        })
+      })
+    </script>
+    <script type="text/javascript">
+      // geri butonunu yakalama
+      window.onhashchange = function(e) {
+        var oldURL = e.oldURL.split('/')[2];
+        var newUrl = e.oldURL.split('/')[0] + '//' + e.oldURL.split('/')[2]
+        window.location = newUrl
+      }
+    </script>
+  </head>
+  <body style="height:100%">
+    <div id="app" ></div><!-- 
+    <span id="return-to-top"><i class="fa fa-chevron-up"></i></span> -->
+    <style>
+      #app{
+        min-height: 100%
+      }
+      .btn-content{
+        height: 35px !important;
+      }
+      
+      .module-header{
+        width: 90%;
+        min-height: 60px;
+        float: left;
+        overflow-y: hidden;
+        margin: 20px 5% 0 5%;
+      }
+      .table-result, .table-footer{
+        width: 90%;
+        min-height: 50px;
+        float: left;
+        overflow-y: hidden;
+        margin: 5px 5% 5px 5%;
+      }
+      .module-header .title{
+        width: 100%;
+        float: left !important;
+        height: 60px;
+        font-size: 24px;
+      } 
+      .module-header .items-display{
+        width: 90%;
+        float: left;
+        height: 60px;
+        text-align: left;
+      }
+      .items-display label{
+        float: left;
+        padding-top: 10px;
+        padding-right: 10px;
+      }
+      .items-display select{
+        float: left;
+        height: 30px;
+        text-align: center;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: solid 1px #eee;
+        color: #777;
+        margin-top: 5px;
+      }
+      .module-header .add{
+        width: 10%;
+        float: left;
+        height: 100%;
+      }
+      .table-selector-large-text{
+        width: 150px !important;
+      }
+      .table-footer .items-total{
+        width: 40%;
+        float: left;
+      }
+      .table-footer .items-pager{
+        width: 60%;
+        float: left;
+      }
+
+      #return-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #FCCD04;
+        width: 50px;
+        height: 50px;
+        display: none;
+        color: #fff;
+        text-decoration: none;
+        -webkit-border-radius: 35px;
+        -moz-border-radius: 35px;
+        border-radius: 35px;
+        -webkit-transition: all 0.3s linear;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+        z-index: 10000 !important;
+      }
+      #return-to-top i {
+        color: #fff;
+        margin: 0;
+        position: relative;
+        left: 16px;
+        top: 13px;
+        font-size: 19px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+      }
+      #return-to-top:hover {
+        cursor: pointer;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      }
+      #return-to-top:hover i {
+        top: 5px;
+        cursor: pointer;
+      }
+
+      @media screen (min-width: 200px), screen and (max-width: 991px){
+        .module-header .title{
+          width: 100%;
+        }
+        .module-header .items-display{
+          width: 100%;
+        }
+        .module-header .add{
+          width: 100%;
+        }
+        .table-footer .items-total{
+          width: 100%;
+          float: left;
+          text-align: center;
+        }
+        .table-footer .items-pager{
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .page-link{
+        color: #3f0050;
+        background: inherit;
+      }
+      .empty-table:hover{
+        cursor: pointer;
+        color: white !important;
+        background: #3f0050;
+      }
+      .page-link:hover{
+        cursor: pointer;
+        background: #3f0050 !important;
+        color: white !important;
+      }
+      .text-primary{
+        color: #3f0050 !important;
+      }
+      .text-gray{
+        color: #555 !important;
+      }
+
+      .text-yellow{
+        color: #FCCD04 !important;
+      }
+      .action-link:hover{
+        color: #028170 !important;
+        cursor: pointer;
+      }
+      .text-underline:hover{
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .breadcrumb{
+        color: #028170;
+        background: inherit !important;
+        border: none !important;
+      }
+      .breadcrumb:hover{
+        cursor: pointer;
+        text-decoration: underline; 
+      }
+      td i{
+        font-size: 16px !important;
+        padding-right: 10px;
+      }
+      td i:hover{
+        cursor: pointer;
+        color: #3f0050 !important; 
+      }
+      .bg-primary{
+        background: #6a0090 !important; 
+      }
+
+      .bg-magento{
+        background: #6a0090 !important; 
+      }
+
+      /*
+
+      BUTTONS
+
+      */
+      .btn-primary{
+        background: #028170;
+        border-color: #028170;
+        height: 35px !important;
+      }
+
+      .btn-primary:hover{
+        background: #028170;
+        border-color: #028170;
+      }
+
+      .btn-danger{
+        background: #dc3545 !important;
+        height: 35px !important;
+      }
+
+      .btn-danger:hover{
+        background: #ff0000;
+        border-color: #ff0000;
+      }
+
+      .btn-warning{
+        background: #FCCD04 !important;
+        height: 35px !important;
+      }
+
+      .bg-green{
+        background: #028170;
+        color: #fff;
+      }
+
+      .bg-gray{
+        background: #555;
+        color: #fff;
+      }
+      .bg-magento{
+        background: #3f0050;
+      }
+      .text-green{
+        color: #028170 !important;
+      }
+
+      .text-white{
+        color: #fff !important;
+      }
+
+      .text-gray{
+        color: #555;
+      }
+      /*
+
+        Question View
+
+      */
+      .answer label{
+        font-weight: 700;
+        color: #000;
+      }
+
+      /*
+
+        Questions Templates 
+
+      */
+      .fa-square{
+        color: #3f0050;
+      }
+      .fa-dot-circle{
+        color: #3f0050;
+      }
+      .no-hover:hover{
+        cursor: default !important;
+      }
+
+      .modal-dialog{
+        margin-top: 75px !important;
+      }
+
+      .customModal{
+        position: fixed;
+        background-color: rgba(0, 0, 0, 1);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100000 !important;
+        opacity: 0.5;
+        pointer-events: none;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        transition: all 0.3s;
+        text-align: center;
+        display: none;
+      }
+      .customModal .loading{
+        font-size: 50px;
+        margin-top: 200px;
+        height: 50px;
+        float: left;
+        width: 100%;
+        text-align: center;
+        color: #00bff3;
+      }
+
+    </style>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

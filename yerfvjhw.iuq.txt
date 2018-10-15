@@ -1,0 +1,31 @@
+﻿Merge remote-tracking branch 'origin/16' into 16
+
+# Conflicts:
+#	api/routes/api_routes.php
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch 16
+# Your branch and 'origin/16' have diverged,
+# and have 3 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	deleted:    api/app/Http/Controllers/DepartmentInformationController.php
+#	modified:   api/database/seeds/DatabaseSeeder.php
+#	modified:   api/routes/api_routes.php
+#	modified:   api/routes/routes_fn.php
+#	renamed:    src/modules/Content.vue -> src/modules/frame/Content.vue
+#	renamed:    src/modules/Footer.vue -> src/modules/frame/Footer.vue
+#	renamed:    src/modules/Header.vue -> src/modules/frame/Header.vue
+#	renamed:    src/modules/Sidebar.vue -> src/modules/frame/Sidebar.vue
+#
+
