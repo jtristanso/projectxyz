@@ -312,38 +312,6 @@
           </span>
         </div>
       </div>
-    <!-- Modal 
-
-      ADD
-    -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-          <div class="modal-header bg-primary">
-            <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-ellipsis-v"></i>{{modalTitle}}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true" class="text-white">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <span v-if="errorMessage !== null" class="text-danger text-center">
-                <label><b>Opps! </b>{{errorMessage}}</label>
-            </span>
-            <br v-if="errorMessage !== null">
-            <br>
-            <div class="input-group">
-              <span class="input-group-addon">Course Join Code</span>
-              <input type="text" class="form-control" v-model="enrolmentCode" placeholder="Enter 12 Digit Join Code">
-            </div>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-primary" @click="submit()" v-if="closeFag == false">Request to Join</button>
-              <button type="button" class="btn btn-danger" v-else  data-dismiss="modal" aria-label="Close">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
 
     <!-- Confirmation Modal -->
     <div class="modal" id="confirmationModal" v-if="confirmation !== null">
@@ -364,32 +332,7 @@
       </div>
     </div>
 
-
-        <!-- New Topic Modal -->
-    <div class="modal fade" id="postTopicModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-          <div class="modal-header bg-primary">
-            <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-ellipsis-v"></i>Post New Topic</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true" class="text-white">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <span v-if="errorMessage !== null" class="text-danger text-center">
-                <label><b>Opps! </b>{{errorMessage}}</label>
-            </span>
-            <br v-if="errorMessage !== null">
-            <br>
-            <textarea class="form-control" id="postTopicTextArea" v-model="postTopicInput"></textarea>
-          </div>
-          <div class="modal-footer">
-              <button type="button" class="btn btn-primary" @click="addTopic()" v-if="closeFag == false">Post</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
+    <join-course></join-course>
   </div>
 </template>
 <script>
@@ -401,6 +344,7 @@ import Chart from 'chart.js'
 export default {
   components: {
     'pie-chart': require('../../components/chart/Pie.vue'),
+    'join-course': require('modules/course/JoinCourse.vue'),
     'course-discussions': require('modules/discussion/Discussion.vue')
   },
   mounted(){
@@ -476,27 +420,6 @@ export default {
     },
     selectCourse(){
       this.selected = this.data[this.selectedIndex]
-    },
-    submit(){
-      if(this.enrolmentCode !== null || this.enrolmentCode !== ''){
-        this.errorMessage = null
-        this.createRequest()
-      }else{
-        this.errorMessage = 'Please fill in all required fields.'
-      }
-    },
-    createRequest(){
-      let formData = new FormData()
-      formData.append(this.methodId, this.user.userID)
-      formData.append('enrolment_code', this.enrolmentCode)
-      axios.post(CONFIG.BACKEND_URL + '/' + this.method + '/create', formData).then(response => {
-        if(response.data.data !== null || response.data.data > 0){
-          $('#myModal').modal('hide')
-          this.retrieveRequest(false)
-        }else{
-          this.errorMessage = response.data.message
-        }
-      })
     },
     statusConfirmation(id, status){
       this.confirmation = {
