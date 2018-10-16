@@ -279,7 +279,7 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
 
 /*
         BODY
@@ -707,11 +707,11 @@ body{
 
  @media (min-width: 1200px){
     .system-header{
-      width: 23%;
+      width: 18%;
     }
     .header-navbar{
-      width: 77%;
-      margin-left: 23%;
+      width: 82%;
+      margin-left: 18%;
     }
     .header-navbar-nav{
       width: 15% !important;
@@ -732,11 +732,11 @@ body{
 
  @media (max-width: 1199px){
     .system-header{
-      width: 23%;
+      width: 18%;
     }
     .header-navbar{
-      width: 77%;
-      margin-left: 23%;
+      width: 82%;
+      margin-left: 18%;
     }
     .header-navbar-nav{
       width: 30%;
