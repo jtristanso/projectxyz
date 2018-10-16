@@ -23,7 +23,7 @@ class EventTicketController extends ClassWorxController
       $path = '../storage/app/qrCodes/';
       $date = Carbon::now()->toDateString().'_';
       $time = str_replace(':', '_',Carbon::now()->toTimeString()).'.png';
-      $filename = 'EVENT_'.$data['organization_id'].'_'.$date.$time;
+      $filename = 'EVENT_'.$data['event_id'].'_'.$date.$time;
       $data['code'] = $this->generateCode();
       $data['attendance_remarks'] = null;
       $data['attendance_status'] = null;

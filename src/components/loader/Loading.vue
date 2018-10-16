@@ -19,7 +19,7 @@
   left: 0;
   width: 100%;
   z-index: 100000 !important;
-  opacity: 0.5;
+  opacity: 1;
   pointer-events: none;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
