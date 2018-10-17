@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\EventComment;
-use App\EventCommentReply;
-class EventCommentController extends ClassWorxController
+use App\Comment;
+use App\CommentReply;
+class CommentController extends ClassWorxController
 {
     function __construct(){
-    	$this->model = new EventComment();
+    	$this->model = new Comment();
     }
 
     public function retrieve(Request $request){
@@ -30,7 +30,7 @@ class EventCommentController extends ClassWorxController
     }
 
     public function getReplies($commentId){
-    	$result = EventCommentReply::where('event_comment_id', '=', $commentId)->orderBy('created_at', 'ASC')->get();
+    	$result = CommentReply::where('event_comment_id', '=', $commentId)->orderBy('created_at', 'ASC')->get();
     	if(sizeof($result) > 0){
     		$i = 0;
     		foreach ($result as $key) {

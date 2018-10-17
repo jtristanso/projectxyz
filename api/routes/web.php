@@ -450,18 +450,18 @@ Route::post('/event_tickets/delete', "EventTicketController@delete");
 Route::get('/event_tickets/test', 'EventTicketController@test');
 
 //Events
-Route::post('/event_comments/create', "EventCommentController@create");
-Route::post('/event_comments/retrieve', "EventCommentController@retrieve");
-Route::post('/event_comments/update', "EventCommentController@update");
-Route::post('/event_comments/delete', "EventCommentController@delete");
-Route::get('/event_comments/test', 'EventCommentController@test');
+Route::post('/comments/create', "CommentController@create");
+Route::post('/comments/retrieve', "CommentController@retrieve");
+Route::post('/comments/update', "CommentController@update");
+Route::post('/comments/delete', "CommentController@delete");
+Route::get('/comments/test', 'CommentController@test');
 
 //Events
-Route::post('/event_comment_replies/create', "EventCommentReplyController@create");
-Route::post('/event_comment_replies/retrieve', "EventCommentReplyController@retrieve");
-Route::post('/event_comment_replies/update', "EventCommentReplyController@update");
-Route::post('/event_comment_replies/delete', "EventCommentReplyController@delete");
-Route::get('/event_comment_replies/test', 'EventCommentReplyController@test');
+Route::post('/comment_replies/create', "CommentReplyController@create");
+Route::post('/comment_replies/retrieve', "CommentReplyController@retrieve");
+Route::post('/comment_replies/update', "CommentReplyController@update");
+Route::post('/comment_replies/delete', "CommentReplyController@delete");
+Route::get('/comment_replies/test', 'CommentReplyController@test');
 
 
 //Mobile Controller

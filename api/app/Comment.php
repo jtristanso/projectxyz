@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EventComment extends APIModel
+class Comment extends APIModel
 {
-    protected $table = 'event_comments';
+    protected $table = 'comments';
     protected $fillable = ['account_id', 'event_id', 'text'];
 }

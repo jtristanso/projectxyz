@@ -70,7 +70,7 @@ export default {
           value: this.id
         }]
       }
-      this.APIRequest('event_comments/retrieve', parameter).then(response => {
+      this.APIRequest('comments/retrieve', parameter).then(response => {
         if(response.data.length > 0){
           this.item = response.data
         }else{
@@ -85,7 +85,7 @@ export default {
           account_id: this.user.userID,
           text: this.newCommentInput
         }
-        this.APIRequest('event_comments/create', parameter).then(response => {
+        this.APIRequest('comments/create', parameter).then(response => {
           if(response.data > 0){
             this.prevNewCommentIndex = null
             this.retrieve()
@@ -100,7 +100,7 @@ export default {
           account_id: this.user.userID,
           text: this.newReplyInput
         }
-        this.APIRequest('event_comment_replies/create', parameter).then(response => {
+        this.APIRequest('comment_replies/create', parameter).then(response => {
           if(response.data > 0){
             this.prevNewCommentIndex = null
             this.retrieve()
