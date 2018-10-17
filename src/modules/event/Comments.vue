@@ -65,9 +65,13 @@ export default {
     retrieve(){
       let parameter = {
         condition: [{
-          column: 'event_id',
+          column: 'payload_value',
           clause: '=',
           value: this.id
+        }, {
+          column: 'payload',
+          clause: '=',
+          value: 'event'
         }]
       }
       this.APIRequest('comments/retrieve', parameter).then(response => {
@@ -81,7 +85,8 @@ export default {
     comment(id){
       if(this.newCommentInput !== '' || this.newCommentInput !== null){
         let parameter = {
-          event_id: id,
+          payload: 'event',
+          payload_value: id,
           account_id: this.user.userID,
           text: this.newCommentInput
         }
@@ -156,7 +161,7 @@ export default {
   margin-right: 2%;
   margin-left: 2%;
 }
-.new-comment img{
+.new-comment img, .comment-header img{
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -165,7 +170,7 @@ export default {
   margin-top: 5px;
   margin-left: 10px;
 }
-.new-comment i{
+.new-comment i, .comment-header i{
   font-size: 24px;
   padding-top: 5px;
   padding-right: 10px;
@@ -201,6 +206,7 @@ export default {
 }
 .comment-footer .footer-menu li:hover{
   cursor: pointer;
+  text-decoration: underline;
 }
 .comment .footer-menu li i{
   font-size: 16px;
@@ -214,6 +220,8 @@ export default {
   margin: 0 2% 0 2%;
   font-weight: 525;
 }
+
+
 .comment-item-reply{
   width: 90%;
   margin-left: 10%;
