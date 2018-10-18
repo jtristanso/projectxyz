@@ -24,4 +24,22 @@ class RatingController extends ClassWorxController
       }
       return $this->response();
     }
+
+    public function retrieve(Request $request){
+      $data = $request->all();
+      $this->retrieveDB($data);
+      $result = $this->response['data'];
+
+      if(sizeof($result) > 0){
+        $payload = $data['condition'][0]['value'];
+        $payloadValue = $data['condition'][1]['value'];
+        $avg = Rating::where('payload', '=', $payload)->where('payload_value', '=', $payloadValue)->avg('value');
+        $total = Rating::where('payload', '=', $payload)->where('payload_value', '=', $payloadValue)->sum('value');
+        $stars = round($avg);
+        $this->response['total'] = $total;
+        $this->response['avg'] = $avg;
+        $this->response['stars'] = $stars;
+      }
+      return $this->response();
+    }
 }

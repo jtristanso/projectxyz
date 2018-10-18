@@ -3,7 +3,7 @@
     <span class="holder">
       <span class="text">
         Average Ratings
-        <i class="fas fa-star text-warning" v-for="i in 5"></i>
+        <i v-bind:class="{'far': stars === 0 || i > stars, 'fas text-warning': i <= stars}" class="fa-star" v-for="i in 5"></i> ({{avg.toFixed(1)}})
       </span>
       <button class="btn btn-primary pull-right" style="margin-top: 5px;" data-toggle="modal" data-target="#submitRatingModal">Submit</button>
     </span>
@@ -25,7 +25,11 @@ export default {
   data(){
     return {
       user: AUTH.user,
-      config: CONFIG
+      config: CONFIG,
+      total: 0,
+      avg: 0,
+      data: null,
+      stars: 0
     }
   },
   props: ['payload', 'payloadValue'],
@@ -46,7 +50,17 @@ export default {
         }]
       }
       this.APIRequest('ratings/retrieve', parameter).then(response => {
-        // retrieve
+        if(response.data !== null){
+          this.data = response.data
+          this.total = response.total
+          this.avg = parseFloat(response.avg)
+          this.stars = response.stars
+        }else{
+          this.data = null
+          this.total = 0
+          this.avg = 0
+          this.stars = 0
+        }
       })
     }
   }
