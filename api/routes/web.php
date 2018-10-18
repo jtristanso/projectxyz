@@ -470,3 +470,10 @@ Route::post('/mobile/v1/ticket_code', "EventTicketController@retrieveByCodeMobil
 Route::post('/mobile/v1/ticket_update', "EventTicketController@updateByMobile");
 Route::post('/mobile/v1/attendance_code', 'AttendanceAccountController@retrieveByCodeMobile');
 Route::post('/mobile/v1/attendance_create', 'AttendanceAccountController@createByMobile');
+
+//Review Controller
+Route::post('/ratings/create', "RatingController@create");
+Route::post('/ratings/retrieve', "RatingController@retrieve");
+Route::post('/ratings/update', "RatingController@update");
+Route::post('/ratings/delete', "RatingController@delete");
+Route::get('/ratings/test', 'RatingController@test');

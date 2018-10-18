@@ -51,6 +51,9 @@
         <label v-if="parseInt(item.max_attendees) > 0">and {{item.total_tickets}} tickets left</label>
         <label v-if="parseInt(item.max_attendees) === 0 || item.max_attendees === null || item.total_tickets === 0">(Not Available)</label>
       </div>
+      <div class="tickets">
+        <rating :payload="event" :payloadValue="item.id"></rating>
+      </div>
     </div>
     <ul class="event-menu">
       <li>
@@ -115,7 +118,8 @@ export default {
   components: {
     'edit-event': require('modules/event/Edit.vue'),
     'view-attendees': require('modules/event/Attendees.vue'),
-    'event-comments': require('modules/event/Comments.vue')
+    'event-comments': require('modules/event/Comments.vue'),
+    'rating': require('modules/rating/Ratings.vue')
   },
   props: {
     item: Object,
