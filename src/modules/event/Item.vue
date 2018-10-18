@@ -52,7 +52,7 @@
         <label v-if="parseInt(item.max_attendees) === 0 || item.max_attendees === null || item.total_tickets === 0">(Not Available)</label>
       </div>
       <div class="tickets">
-        <rating :payload="event" :payloadValue="item.id"></rating>
+        <rating :payload="'event'" :payloadValue="item.id"></rating>
       </div>
     </div>
     <ul class="event-menu">
