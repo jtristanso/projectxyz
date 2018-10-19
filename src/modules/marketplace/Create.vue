@@ -68,7 +68,6 @@
             </div>
           </div>
           <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#createEventModal">Cancel</button>
               <button type="button" class="btn btn-primary" @click="addEvent()">Add</button>
           </div>
         </div>
