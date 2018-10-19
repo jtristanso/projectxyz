@@ -27,10 +27,14 @@ let canales = require('./dev_routes/canales.js')
 let magUsara = require('./dev_routes/mag_usara.js')
 let espina = require('./dev_routes/espina.js')
 let estella = require('./dev_routes/estella.js')
+let messenger = require('./dev_routes/messenger.js')
+let marketplace = require('./dev_routes/marketplace.js')
 devRoutes = devRoutes.concat(canales.default.routes)
 devRoutes = devRoutes.concat(magUsara.default.routes)
 devRoutes = devRoutes.concat(espina.default.routes)
 devRoutes = devRoutes.concat(estella.default.routes)
+devRoutes = devRoutes.concat(messenger.default.routes)
+devRoutes = devRoutes.concat(marketplace.default.routes)
 for(let x = 0; x < devRoutes.length; x++){
   devRoutes[x]['beforeEnter'] = beforeEnter
 }
