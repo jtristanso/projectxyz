@@ -5,9 +5,9 @@
         Average Ratings
         <i v-bind:class="{'far': stars === 0 || i > stars, 'fas text-warning': i <= stars}" class="fa-star" v-for="i in 5"></i> ({{avg.toFixed(1)}})
       </span>
-      <button class="btn btn-primary pull-right" style="margin-top: 5px;" data-toggle="modal" data-target="#submitRatingModal">Submit</button>
+      <button class="btn btn-primary pull-right" style="margin-top: 5px;" data-toggle="modal" data-target="#submitRatingModal" v-if="status === false">Submit</button>
     </span>
-    <rating-create :payload="payload" :payloadValue="payloadValue"></rating-create>
+    <rating-create :payload="payload" :payloadValue="payloadValue" v-if="status === false"></rating-create>
   </span>
 </template>
 <script>
@@ -29,7 +29,8 @@ export default {
       total: 0,
       avg: 0,
       data: null,
-      stars: 0
+      stars: 0,
+      status: true
     }
   },
   props: ['payload', 'payloadValue'],
@@ -39,6 +40,7 @@ export default {
     },
     retrieve(){
       let parameter = {
+        account_id: this.user.userID,
         condition: [{
           value: this.payload,
           column: 'payload',
@@ -55,11 +57,13 @@ export default {
           this.total = response.total
           this.avg = parseFloat(response.avg)
           this.stars = response.stars
+          this.status = response.status
         }else{
           this.data = null
           this.total = 0
           this.avg = 0
           this.stars = 0
+          this.status = true
         }
       })
     }

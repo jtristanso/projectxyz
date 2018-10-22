@@ -40,6 +40,18 @@ class RatingController extends ClassWorxController
         $this->response['avg'] = $avg;
         $this->response['stars'] = $stars;
       }
+      $accountId = $data['account_id'];
+      $payload = $data['condition'][0]['value'];
+      $payloadValue = $data['condition'][1]['value'];
+      $this->response['status'] = $this->checkAccountExist($accountId, $payload, $payloadValue);
       return $this->response();
+    }
+
+    public function checkAccountExist($accountId, $payload, $payloadValue){
+      $result = Rating::where('account_id', '=', $accountId)
+      ->where('payload', '=', $payload)
+      ->where('payload_value', '=', $payloadValue)
+      ->get();
+      return (sizeof($result) > 0) ? true : false;
     }
 }
