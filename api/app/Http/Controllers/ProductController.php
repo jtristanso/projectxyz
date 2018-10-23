@@ -8,5 +8,6 @@ class ProductController extends ClassworxController
 {
     function __construct(){
       $this->model = new Product();
+      $this->notRequired = array('description');
     }
 }

@@ -492,3 +492,10 @@ Route::post('/products/retrieve', "ProductController@retrieve");
 Route::post('/products/update', "ProductController@update");
 Route::post('/products/delete', "ProductController@delete");
 Route::get('/products/test', 'ProductController@test');
+
+//Product Buyer Controller
+Route::post('/product_buyers/create', "ProductBuyerController@create");
+Route::post('/product_buyers/retrieve', "ProductBuyerController@retrieve");
+Route::post('/product_buyers/update', "ProductBuyerController@update");
+Route::post('/product_buyers/delete', "ProductBuyerController@delete");
+Route::get('/product_buyers/test', 'ProductBuyerController@test');
