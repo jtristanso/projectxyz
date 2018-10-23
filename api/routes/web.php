@@ -479,9 +479,16 @@ Route::post('/ratings/delete', "RatingController@delete");
 Route::get('/ratings/test', 'RatingController@test');
 
 
-//Review Controller
+//Messenger Controller
 Route::post('/messenger_groups/create', "MessengerGroupController@create");
 Route::post('/messenger_groups/retrieve', "MessengerGroupController@retrieve");
 Route::post('/messenger_groups/update', "MessengerGroupController@update");
 Route::post('/messenger_groups/delete', "MessengerGroupController@delete");
 Route::get('/messenger_groups/test', 'MessengerGroupController@test');
+
+//Product Controller
+Route::post('/products/create', "ProductController@create");
+Route::post('/products/retrieve', "ProductController@retrieve");
+Route::post('/products/update', "ProductController@update");
+Route::post('/products/delete', "ProductController@delete");
+Route::get('/products/test', 'ProductController@test');
