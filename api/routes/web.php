@@ -499,3 +499,10 @@ Route::post('/product_buyers/retrieve', "ProductBuyerController@retrieve");
 Route::post('/product_buyers/update', "ProductBuyerController@update");
 Route::post('/product_buyers/delete', "ProductBuyerController@delete");
 Route::get('/product_buyers/test', 'ProductBuyerController@test');
+
+//Product Sold Controller
+Route::post('/product_solds/create', "ProductSoldController@create");
+Route::post('/product_solds/retrieve', "ProductSoldController@retrieve");
+Route::post('/product_solds/update', "ProductSoldController@update");
+Route::post('/product_solds/delete', "ProductSoldController@delete");
+Route::get('/product_solds/test', 'ProductSoldController@test');
