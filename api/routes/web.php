@@ -477,3 +477,11 @@ Route::post('/ratings/retrieve', "RatingController@retrieve");
 Route::post('/ratings/update', "RatingController@update");
 Route::post('/ratings/delete', "RatingController@delete");
 Route::get('/ratings/test', 'RatingController@test');
+
+
+//Review Controller
+Route::post('/messenger_groups/create', "MessengerGroupController@create");
+Route::post('/messenger_groups/retrieve', "MessengerGroupController@retrieve");
+Route::post('/messenger_groups/update', "MessengerGroupController@update");
+Route::post('/messenger_groups/delete', "MessengerGroupController@delete");
+Route::get('/messenger_groups/test', 'MessengerGroupController@test');
