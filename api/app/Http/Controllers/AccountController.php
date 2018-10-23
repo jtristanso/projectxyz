@@ -32,7 +32,8 @@ class AccountController extends ClassWorxController
         $this->notRequired = array(
           'status',
           'active_semester',
-          'active_organization'
+          'active_organization',
+          'active_course'
         );
     }
 
