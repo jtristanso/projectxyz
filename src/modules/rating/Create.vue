@@ -61,6 +61,7 @@
             }else{
               this.errorMessage = null
               $('#submitRatingModal').modal('hide')
+              this.$parent.retrieve()
             }
           })
         }else{
