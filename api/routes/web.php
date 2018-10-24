@@ -506,3 +506,17 @@ Route::post('/product_solds/retrieve', "ProductSoldController@retrieve");
 Route::post('/product_solds/update', "ProductSoldController@update");
 Route::post('/product_solds/delete', "ProductSoldController@delete");
 Route::get('/product_solds/test', 'ProductSoldController@test');
+
+//Product Photo Controller
+Route::post('/product_photos/create', "ProductPhotoController@create");
+Route::post('/product_photos/retrieve', "ProductPhotoController@retrieve");
+Route::post('/product_photos/update', "ProductPhotoController@update");
+Route::post('/product_photos/delete', "ProductPhotoController@delete");
+Route::get('/product_photos/test', 'ProductPhotoController@test');
+
+//Product Price Controller
+Route::post('/product_prices/create', "ProductPriceController@create");
+Route::post('/product_prices/retrieve', "ProductPriceController@retrieve");
+Route::post('/product_prices/update', "ProductPriceController@update");
+Route::post('/product_prices/delete', "ProductPriceController@delete");
+Route::get('/product_prices/test', 'ProductPriceController@test');
