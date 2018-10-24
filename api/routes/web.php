@@ -520,3 +520,10 @@ Route::post('/product_prices/retrieve', "ProductPriceController@retrieve");
 Route::post('/product_prices/update', "ProductPriceController@update");
 Route::post('/product_prices/delete', "ProductPriceController@delete");
 Route::get('/product_prices/test', 'ProductPriceController@test');
+
+//Product Price Controller
+Route::post('/product_inventories/create', "ProductInventoryController@create");
+Route::post('/product_inventories/retrieve', "ProductInventoryController@retrieve");
+Route::post('/product_inventories/update', "ProductInventoryController@update");
+Route::post('/product_inventories/delete', "ProductInventoryController@delete");
+Route::get('/product_inventories/test', 'ProductInventoryController@test');
