@@ -101,7 +101,7 @@ export default {
     reply(id){
       if(this.newReplyInput !== '' || this.newReplyInput !== null){
         let parameter = {
-          event_comment_id: id,
+          comment_id: id,
           account_id: this.user.userID,
           text: this.newReplyInput
         }
@@ -161,7 +161,7 @@ export default {
   margin-right: 2%;
   margin-left: 2%;
 }
-.new-comment img, .comment-header img{
+.new-comment img, .comment-header img, .reply-header img{
   height: 30px;
   width: 30px;
   border-radius: 50%;

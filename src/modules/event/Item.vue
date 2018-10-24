@@ -118,7 +118,7 @@ export default {
   components: {
     'edit-event': require('modules/event/Edit.vue'),
     'view-attendees': require('modules/event/Attendees.vue'),
-    'event-comments': require('modules/event/Comments.vue'),
+    'event-comments': require('modules/comment/Comments.vue'),
     'rating': require('modules/rating/Ratings.vue')
   },
   props: {

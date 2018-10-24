@@ -30,7 +30,7 @@ class CommentController extends ClassWorxController
     }
 
     public function getReplies($commentId){
-    	$result = CommentReply::where('event_comment_id', '=', $commentId)->orderBy('created_at', 'ASC')->get();
+    	$result = CommentReply::where('comment_id', '=', $commentId)->orderBy('created_at', 'ASC')->get();
     	if(sizeof($result) > 0){
     		$i = 0;
     		foreach ($result as $key) {
