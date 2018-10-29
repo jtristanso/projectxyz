@@ -93,6 +93,7 @@ export default {
       {id: 100, users: 'ALL', parent_id: 0, description: 'Organizations', icon: 'fas fa-users', path: 'organizations'},
       {id: 110, users: 'ALL', parent_id: 0, description: 'Marketplace', icon: 'fas fa-shopping-cart', path: 'marketplace'},
       {id: 120, users: 'ALL', parent_id: 0, description: 'Messenger', icon: 'fas fa-envelope', path: 'messenger'},
+      {id: 125, users: 'ALL', parent_id: 0, description: 'Webrtc', icon: 'fas fa-video', path: 'webrtc'},
       {id: 150, users: 'ALL', parent_id: 0, description: 'Account Settings', icon: 'fa fa-cog', path: 'account_settings'},
       {id: 200, users: 'ADMIN', parent_id: 0, description: 'Accounts', icon: 'fa fa-users', path: 'accounts'}
       ],
