@@ -528,6 +528,13 @@ Route::post('/product_inventories/update', "ProductInventoryController@update");
 Route::post('/product_inventories/delete', "ProductInventoryController@delete");
 Route::get('/product_inventories/test', 'ProductInventoryController@test');
 
+//Product Attribute Controller
+Route::post('/product_attributes/create', "ProductAttributeController@create");
+Route::post('/product_attributes/retrieve', "ProductAttributeController@retrieve");
+Route::post('/product_attributes/update', "ProductAttributeController@update");
+Route::post('/product_attributes/delete', "ProductAttributeController@delete");
+Route::get('/product_attributes/test', 'ProductAttributeController@test');
+
 // RTC Videos Controller
 Route::post('/rtc_videos/create', "RtcVideoController@create");
 Route::post('/rtc_videos/retrieve', "RtcVideoController@retrieve");
